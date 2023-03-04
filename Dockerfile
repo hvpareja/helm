@@ -8,6 +8,8 @@ ENV HELM_3_FILE="helm-v3.8.1-linux-amd64.tar.gz"
 
 ENV PYTHONPATH "/usr/lib/python3.11/site-packages/"
 
+RUN echo "" >/etc/apk/repositories
+
 RUN apk add --no-cache ca-certificates \
     --repository http://dl-3.alpinelinux.org/alpine/edge/community/ \
     jq curl bash nodejs aws-cli && \
